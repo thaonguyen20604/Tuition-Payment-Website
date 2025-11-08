@@ -1,0 +1,248 @@
+/* General container for the entire page */
+.login-container {
+    display: flex;
+    min-height: 90vh;
+    min-width: 80vw;
+    border-radius: 20px;  /* bo góc */
+    font-family: Arial, sans-serif;
+    color: #333;
+    overflow: hidden;     /* cắt phần con tràn ra */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* để nổi bật hơn */
+    
+}
+
+/* --- Left Sidebar --- */
+.login-sidebar {
+  flex: 0 0 60%; /* Fixed width for the sidebar */
+  background-color: #194069; /* Dark blue color */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.login-sidebar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 10vw;               /* chỉnh độ dày cong */
+  background: #fff;
+  clip-path: ellipse(100% 50% at 100% 50%);
+  z-index: 0;
+}
+
+
+/* Nội dung trong sidebar nằm trên đường cong */
+.login-sidebar > * {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-container {
+  width: 80%;   /* 15% chiều ngang viewport */
+  height: 80%;
+  max-width: 120px;
+  max-height: 120px;
+  min-width: 60px;
+  min-height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Ensures the logo is on top of the curve */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.tdt-logo {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.ibanking-text {
+  font-size: 220%;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Right Content Section --- */
+.login-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.login-header h2 {
+  font-size: 2.75rem;
+  font-weight: bolder;
+  color: #194069;
+  margin: 0;
+}
+
+.bank-icon {
+  font-size: 2.5vw;
+}
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form label {
+  font-size: 1rem;
+  color: #303030;
+  margin: 0 0 0.5rem 0.2rem;
+  text-align: left;
+}
+
+.input-field {
+  max-width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #194069;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #EBF4FA;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.login-button {
+  width: 40%;
+  padding: 1rem;
+  background-color: #194069;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.login-button:hover {
+  background-color: #002143;
+}
+
+.login-button:active {
+  background-color: #002e63;
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-field-pass {
+  flex: 1;
+  max-width: 100%;
+  padding: 1rem 2rem 1rem 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #194069;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #EBF4FA;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 0.5rem;         /* cách mép phải một chút */
+  transform: translateY(-50%);
+  background: none;       /* bỏ nền */
+  border: none;           /* bỏ viền */
+  cursor: pointer;
+  padding: 0;             /* bỏ padding mặc định */
+  line-height: 1;         /* tránh icon bị thụt */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn:focus {
+  outline: none; /* không hiện khi click */
+}
+
+.toggle-btn:focus-visible {
+  outline: 2px solid #194069;  /* chỉ hiện khi tab bằng bàn phím */
+  border-radius: 4px;
+}
+
+
+.eye-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .login-sidebar {
+    display: none; /* ẩn sidebar */
+  }
+
+  .login-container {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;   /* nền xám nhạt để form nổi lên */
+  }
+
+  .login-content {
+    width: 90%;            /* chiếm 90% màn hình */
+    max-width: 420px;      /* không quá to */
+    padding: 2rem;
+    border-radius: 16px;   /* bo góc đẹp */
+    background: #fff;      /* nền trắng của card */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2); /* đổ bóng */
+  }
+
+  .login-button {
+    width: 100%;           /* nút full ngang cho mobile */
+  }
+  /* Làm cho page-wrapper chiếm toàn màn hình và căn giữa nội dung */
+.page-wrapper {
+  min-height: 100vh;             /* cao bằng 100% màn hình */
+  display: flex;                 /* dùng flexbox */
+  justify-content: center;       /* căn giữa ngang */
+  align-items: center;           /* căn giữa dọc */
+  background-color: #f2f2f2;     /* nền nhạt cho đẹp (tùy chọn) */
+}
+
+
+
+  
+}

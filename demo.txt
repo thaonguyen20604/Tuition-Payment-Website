@@ -1,0 +1,17 @@
+python -m venv .venv
+source .venv/Scripts/activate
+Backend:
+cd backend
+uvicorn auth.main:app --reload --port 8001
+uvicorn users.main:app --reload --port 8002
+uvicorn studentfee.main:app --reload --port 8003
+uvicorn payment.main:app --reload --port 8004
+uvicorn gateway.main:app --reload --port 8000
+
+
+Frontend:
+cd frontend
+npm install
+npm install react react-dom react-router-dom
+npm install axios
+npm run dev

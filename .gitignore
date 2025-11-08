@@ -1,0 +1,13 @@
+# Python / FastAPI
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Node / React / Vite
+node_modules/
+dist/
+build/
+
+# Hệ điều hành
+.DS_Store
